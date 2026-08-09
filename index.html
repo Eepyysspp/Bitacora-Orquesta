@@ -1,138 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora de Música Electroacústica</title>
-    <style>
-        /* Estilos generales inspirados en interfaces de audio (oscuro con acentos neón) */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #1e1e1e;
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 3px solid #00ffcc;
-        }
-        h1 {
-            margin: 0;
-            color: #00ffcc;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        h2 {
-            color: #ff007f;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        /* Estilos para las entradas de la bitácora */
-        .entry {
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            border-left: 4px solid #00ffcc;
-        }
-        .date {
-            font-size: 0.9em;
-            color: #888;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .tag {
-            display: inline-block;
-            background-color: #333;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            margin-right: 5px;
-            color: #fff;
-        }
-        .tag.progreso { border-bottom: 2px solid #00ffcc; }
-        .tag.idea { border-bottom: 2px solid #ffcc00; }
-        
-        /* Enlaces e imágenes */
-        a {
-            color: #00ffcc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #ff007f;
-        }
-        .media-container {
-            margin-top: 15px;
-            text-align: center;
-        }
-        .media-container img {
-            max-width: 100%;
-            border-radius: 4px;
-            border: 1px solid #333;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.8em;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
+---
+layout: default
+---
+Registro de Actividades
 
-    <header>
-        <h1>Bitácora Electroacústica</h1>
-        <p>Portafolio de progreso y experimentación sonora</p>
-    </header>
+{% for post in site.posts %}
 
-    <div class="container">
-        
-        <h2>Registro de Actividades</h2>
+    {{ post.date | date: "%d/%m/%Y" }}
+    
+        {{ post.etiqueta_nombre }} 
+        {{ post.title }}
+    
+    {{ post.content }}
 
-        <!-- ENTRADA 1: Ejemplo de Progreso con Imagen -->
-        <div class="entry">
-            <span class="date">24 de Octubre, 2026</span>
-            <h3><span class="tag progreso">Progreso</span> Síntesis Granular Básica</h3>
-            <p>Hoy logré configurar el primer patch de síntesis granular. El objetivo principal era entender cómo el tamaño del grano afecta la textura final del sonido. Utilicé una muestra de voz y la fragmenté en granos de 50ms.</p>
-            
-            <div class="media-container">
-                <!-- Reemplaza el link de abajo con el link de tu propia imagen -->
-                <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=800&q=80" alt="Interfaz de software de audio">
-                <p><em>Captura de la envolvente del grano en el software.</em></p>
-            </div>
-        </div>
-
-        <!-- ENTRADA 2: Ejemplo de Idea con Link -->
-        <div class="entry">
-            <span class="date">26 de Octubre, 2026</span>
-            <h3><span class="tag idea">Idea</span> Grabaciones de Campo (Field Recording)</h3>
-            <p>Pensando en el proyecto final, quiero recolectar sonidos de fricción metálica en el metro de la ciudad para procesarlos posteriormente con delay y reverb convolutiva.</p>
-            <p>Referencia de inspiración: <a href="https://www.youtube.com/" target="_blank">Escuchar obra de Musique Concrète aquí</a>.</p>
-        </div>
-
-        <!-- INSTRUCCIONES (Puedes borrar esto luego) -->
-        <div class="entry" style="border-left-color: #ff007f;">
-            <h3>¿Cómo añadir más entradas?</h3>
-            <p>Para añadir un nuevo registro, simplemente copia todo el bloque de código HTML que va desde <code>&lt;div class="entry"&gt;</code> hasta el siguiente <code>&lt;/div&gt;</code> y pégalo justo encima de esta caja en tu archivo de GitHub.</p>
-        </div>
-
-    </div>
-
-    <footer>
-        &copy; 2026 Mi Portafolio de Música
-    </footer>
-
-</body>
-</html>
+{% endfor %}
