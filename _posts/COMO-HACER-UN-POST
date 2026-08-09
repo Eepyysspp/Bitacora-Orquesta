@@ -1,0 +1,15 @@
+Cómo funciona tu nueva bitácora
+
+A partir de ahora, nunca más tendrás que tocar código HTML. Cada vez que quieras añadir algo 
+a tu bitácora sobre tus clases de música electroacústica, solo debes seguir estos pasos:
+
+    Vas a tu carpeta _posts en GitHub.
+
+    Creas un archivo nuevo con la fecha de hoy (ej: 2026-08-15-grabacion-campo.md).
+
+    Pegas el encabezado (Front Matter) con el título y la etiqueta (Idea o Progreso).
+
+    Escribes tu texto normalmente, usando **texto** para negritas o ![texto alt](link-de-imagen) para imágenes.
+
+Jekyll tomará ese archivo de texto, lo vestirá con tu plantilla oscura, y lo colocará de primero 
+en tu página web de forma automática.
